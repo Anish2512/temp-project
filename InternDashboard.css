@@ -1,0 +1,12 @@
+/* InternDashboard.css */
+.intern-dashboard {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .intern-content {
+    flex-grow: 1;
+    padding: 20px;
+    background: #f4f4f4;
+  }
+  

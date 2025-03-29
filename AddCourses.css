@@ -1,0 +1,89 @@
+/* Container Styles */
+.course-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input and Button Styling */
+input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #d00000;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #a00000;
+}
+
+/* Course Card Styling */
+.course-tile {
+    display: flex;
+    align-items: center;
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Course Image */
+.course-image {
+    width: 200px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+/* Course Info */
+.course-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 450px; 
+}s
+
+.course-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #d00000;
+}
+
+.student-name {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Delete Button */
+.delete-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: red;
+    cursor: pointer;
+    align-self: center;
+}
+
+.delete-button:hover {
+    color: darkred;
+}
