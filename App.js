@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Login from "./Login";
 import Navbar from "./Navbar";
 import AdminDashboard from "./AdminDashboard";
@@ -10,8 +15,10 @@ import MapInternsToSeniorDirector from "./MapInternsToSeniorDirector";
 import Sidebar from "./AdminSidebar";
 import InternSidebar from "./InternSidebar";
 import RegisterInterns from "./RegisterInterns";
+import FeedbackForm from "./FeedbackForm"; // ✅ Import FeedbackForm component
 import "@fontsource/poppins";
 import "./styles.css";
+import AddCourses from "./AddCourses";
 
 function App() {
   return (
@@ -28,6 +35,16 @@ function App() {
             <div className="app-container">
               <Sidebar />
               <AdminDashboard />
+            </div>
+          }
+        />
+
+        <Route
+          path="/add-courses"
+          element={
+            <div className="app-container">
+              <Sidebar />
+              <AddCourses />
             </div>
           }
         />
@@ -60,6 +77,17 @@ function App() {
             <div className="app-container">
               <InternSidebar />
               <InternDashboard />
+            </div>
+          }
+        />
+
+        {/* Feedback Form Route */}
+        <Route
+          path="/feedback-form"
+          element={
+            <div className="app-container">
+              <InternSidebar /> {/* ✅ Keeping Sidebar for UI consistency */}
+              <FeedbackForm />
             </div>
           }
         />
