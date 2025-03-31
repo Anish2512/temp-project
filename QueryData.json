@@ -1,0 +1,27 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "question": "How do I deploy a React app?",
+        "askedBy": "Alice Smith",
+        "answers": [
+          {
+            "answer": "You can use Vercel or Netlify for easy deployment.",
+            "answeredBy": "Bob Johnson"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "question": "What is the best way to manage state in React?",
+        "askedBy": "Charlie Brown",
+        "answers": [
+          {
+            "answer": "Redux is great for global state, but useContext works well for small apps.",
+            "answeredBy": "David Lee"
+          }
+        ]
+      }
+    ]
+  }
+  
