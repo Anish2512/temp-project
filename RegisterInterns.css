@@ -1,0 +1,116 @@
+/* Full Page Layout */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #f5f5f5; /* Light Grey Background */
+}
+
+/* Main Content (starts after sidebar) */
+.main-content {
+  margin-left: 18%; /* Push content to start after sidebar */
+  width: 82%; /* Remaining width */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+
+/* Main Container (Form Box) */
+.register-interns {
+  padding: 40px;
+  width: 1000px;
+  height: 600px;
+  background: #ffffff; /* Solid White */
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  color: #1e1e1e; /* Dark Grey Text */
+  border: 2px solid #ddd; /* Light Grey Border */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Title */
+.register-interns h2 {
+  color: #d90000; /* Bold Red */
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+/* Form Styling */
+.intern-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Input Fields */
+.intern-form input {
+  padding: 12px;
+  font-size: 25px;
+  border: 2px solid #888; /* Grey Border */
+  border-radius: 20px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+  background: #f9f9f9; /* Light Grey */
+  color: #333; /* Dark Text */
+}
+
+/* Input Focus */
+.intern-form input:focus {
+  border-color: #d90000; /* Red Highlight */
+}
+
+/* Buttons */
+.intern-form button,
+.upload-section button {
+  padding: 12px;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: #d90000; /* Red Button */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.intern-form button:hover,
+.upload-section button:hover {
+  background-color: #a80000; /* Darker Red */
+  transform: scale(1.05);
+}
+
+/* Upload Section */
+.upload-section {
+  margin-top: 30px;
+}
+
+.upload-section input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ffcc00; /* Yellow Border */
+  border-radius: 5px;
+  background: #f9f9f9; /* Light Grey */
+  color: black;
+}
+
+/* Upload Button */
+.upload-section button {
+  background-color: #ffcc00; /* Yellow Button */
+  color: black;
+}
+
+.upload-section button:hover {
+  background-color: #e6b800; /* Darker Yellow */
+}
