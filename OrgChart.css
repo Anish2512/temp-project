@@ -1,0 +1,63 @@
+/* Org Chart Main Container */
+.org-chart-container {
+    text-align: center;
+    padding: 20px;
+    background: #f4f4f4; /* Light grey */
+    min-height: 100vh;
+}
+
+/* Title */
+.org-chart-container h2 {
+    color: #d90000; /* Red */
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Organizational Chart Layout */
+.org-chart {
+    display: flex;
+    justify-content: center;  /* Center directors */
+    align-items: flex-start;   /* Align to top */
+    gap: 60px; /* Space between directors */
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+/* Senior Director Box */
+.director-box {
+    background: #d90000; /* Red */
+    color: white;
+    padding: 15px 30px;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    border-bottom: 5px solid #ffcc00; /* Yellow accent */
+    min-height: 50px; /* Ensure all directors have same height */
+}
+
+/* Intern Container - Column Layout under each director */
+.interns {
+    display: flex;
+    flex-direction: column; /* Stacks interns in a column */
+    align-items: center;
+    gap: 28px;
+    margin-top: 20px;
+}
+
+/* Intern Box */
+.intern-box {
+    background: white; /* White */
+    color: black;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    text-align: center;
+    border-left: 5px solid #ffcc00; /* Yellow accent */
+}
