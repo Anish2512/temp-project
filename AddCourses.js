@@ -2,27 +2,27 @@ import React, { useState } from "react";
 import "./AddCourses.css";
 
 const AddCourses = () => {
+  const [courseDomain, setCourseDomain] = useState(""); // Domain selection
   const [courseUrl, setCourseUrl] = useState("");
-  const [studentName, setStudentName] = useState("");
   const [courses, setCourses] = useState([]);
 
   const handleAddCourse = async () => {
-    if (!courseUrl.trim() || !studentName.trim()) {
-      alert("Please enter both the course URL and the student name.");
+    if (!courseDomain || !courseUrl.trim()) {
+      alert("Please select a domain and enter the course URL.");
       return;
     }
 
     const metadata = await fetchMetaData(courseUrl);
     const newCourse = {
+      domain: courseDomain,
       url: courseUrl,
-      student: studentName,
       title: metadata.title || "Unknown Course",
       image: metadata.image || "https://via.placeholder.com/150",
     };
 
     setCourses([...courses, newCourse]);
+    setCourseDomain(""); // Reset dropdown
     setCourseUrl("");
-    setStudentName("");
   };
 
   const handleDeleteCourse = (index) => {
@@ -31,27 +31,47 @@ const AddCourses = () => {
 
   const fetchMetaData = async (url) => {
     try {
+      // Use Microlink API (Free tier available)
       const response = await fetch(
-        `https://cors-anywhere.herokuapp.com/${url}`
+        `https://api.microlink.io/?url=${encodeURIComponent(url)}`
       );
-      const text = await response.text();
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(text, "text/html");
+      const data = await response.json();
 
-      const title =
-        doc.querySelector("meta[property='og:title']")?.content || doc.title;
-      const image = doc.querySelector("meta[property='og:image']")?.content;
-
-      return { title, image };
+      return {
+        title: data?.data?.title || "Unknown Course",
+        image: data?.data?.image?.url || "https://via.placeholder.com/150",
+      };
     } catch (error) {
       console.error("Error fetching metadata:", error);
-      return {};
+      return {
+        title: "Unknown Course",
+        image: "https://via.placeholder.com/150",
+      };
     }
   };
 
   return (
     <div className="add-courses-container">
       <h2>Add Course</h2>
+
+      {/* Domain Selection */}
+      <div className="input-group">
+        <label>Select Course Domain:</label>
+        <select
+          value={courseDomain}
+          onChange={(e) => setCourseDomain(e.target.value)}
+        >
+          <option value="">Select Domain</option>
+          <option value="Frontend">Frontend</option>
+          <option value="Backend">Backend</option>
+          <option value="Cloud Computing">Cloud Computing</option>
+          <option value="AI/ML">AI/ML</option>
+          <option value="Cybersecurity">Cybersecurity</option>
+          <option value="Data Science">Data Science</option>
+        </select>
+      </div>
+
+      {/* Course URL Input */}
       <div className="input-group">
         <label>Course URL:</label>
         <input
@@ -61,19 +81,13 @@ const AddCourses = () => {
           placeholder="Enter course link..."
         />
       </div>
-      <div className="input-group">
-        <label>Assign to Student:</label>
-        <input
-          type="text"
-          value={studentName}
-          onChange={(e) => setStudentName(e.target.value)}
-          placeholder="Enter student name..."
-        />
-      </div>
+
+      {/* Add Course Button */}
       <button className="add-button" onClick={handleAddCourse}>
         Add Course
       </button>
 
+      {/* Display Added Courses */}
       <div className="course-tiles">
         {courses.map((course, index) => (
           <div key={index} className="course-tile">
@@ -83,6 +97,9 @@ const AddCourses = () => {
               className="course-image"
             />
             <div className="course-info">
+              <p className="course-domain">
+                <strong>Domain:</strong> {course.domain}
+              </p>
               <a
                 href={course.url}
                 target="_blank"
@@ -91,7 +108,6 @@ const AddCourses = () => {
               >
                 {course.title}
               </a>
-              <p className="student-name">Assigned to: {course.student}</p>
             </div>
             <button
               className="delete-button"
