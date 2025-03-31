@@ -1,0 +1,52 @@
+[
+    {
+      "id": 1,
+      "title": "React Basics",
+      "description": "Introduction to React and its core concepts."
+    },
+    {
+      "id": 2,
+      "title": "Advanced JavaScript",
+      "description": "Deep dive into JavaScript ES6+ features."
+    },
+    {
+      "id": 3,
+      "title": "Database Management",
+      "description": "Learn SQL and NoSQL databases."
+    },
+    {
+      "id": 4,
+      "title": "UI/UX Design Principles",
+      "description": "Understand user interface and experience design essentials."
+    },
+    {
+      "id": 5,
+      "title": "Cloud Computing Fundamentals",
+      "description": "Explore cloud technologies and services such as AWS and Azure."
+    },
+    {
+      "id": 6,
+      "title": "Data Structures & Algorithms",
+      "description": "Master the basics of DSA for efficient problem-solving."
+    },
+    {
+      "id": 7,
+      "title": "Python for Data Science",
+      "description": "Learn Python with a focus on data manipulation and analysis."
+    },
+    {
+      "id": 8,
+      "title": "Cybersecurity Basics",
+      "description": "Understand the fundamentals of online security and cryptography."
+    },
+    {
+      "id": 9,
+      "title": "DevOps Practices",
+      "description": "Explore DevOps tools and workflows for continuous delivery."
+    },
+    {
+      "id": 10,
+      "title": "Machine Learning Introduction",
+      "description": "Dive into ML concepts and hands-on techniques with real-world datasets."
+    }
+  ]

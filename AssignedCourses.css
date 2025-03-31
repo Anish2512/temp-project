@@ -1,0 +1,60 @@
+/* Apply to entire page */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #121212; /* Black background */
+}
+
+/* Container for assigned courses */
+.assigned-courses-container {
+    padding: 20px;
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    margin-left: 15%;
+}
+
+/* Header styling */
+h2 {
+    text-align: center;
+    color: #ff4d4d;
+}
+
+/* Flexbox layout for course cards */
+.courses-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Individual course card styling */
+.course-card {
+    background: #1e1e1e;
+    border: 2px solid #ff4d4d;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    height: 180px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover effect for course cards */
+.course-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(255, 77, 77, 0.7);
+}
+
+/* Course title styling */
+.course-card h3 {
+    color: #ff4d4d;
+    margin-bottom: 10px;
+}
+
+/* Course description styling */
+.course-card p {
+    color: #ccc;
+}
