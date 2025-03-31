@@ -1,0 +1,168 @@
+/* ---- 🌟 Overall Calendar Container ---- */
+.calendar-container {
+    width: 90%;
+    max-width: 1000px;
+    height: 600px; /* Fixed height to enable scrolling */
+    margin-left: 18%;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 3px solid black;
+    overflow: hidden; /* Prevents content from overflowing */
+}
+
+/* ---- 🏷️ Calendar Header Title ---- */
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #d32f2f;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ---- 🛠️ Toolbar (Navigation & Buttons) ---- */
+.fc .fc-toolbar {
+    background: black;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Prevents buttons from cramping */
+}
+
+/* ---- 🔽 Improved Navigation Buttons (Today, Prev, Next) ---- */
+.fc .fc-toolbar-chunk:first-child {
+    display: flex;
+    gap: 10px;
+}
+
+.fc .fc-button {
+    background: #d32f2f !important;
+    border: none !important;
+    color: white !important;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s;
+    font-size: 0.9rem;
+}
+
+.fc .fc-button:hover {
+    background: #b71c1c !important;
+    transform: scale(1.05);
+}
+
+.fc-prev-button,
+.fc-next-button {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.fc-today-button {
+    border-radius: 6px;
+    padding: 8px 14px;
+}
+
+/* ---- 📅 Calendar Grid Background ---- */
+.fc-theme-standard .fc-scrollgrid {
+    border: 2px solid black;
+    background: white;
+}
+
+/* ---- 📆 Individual Date Cells ---- */
+.fc-daygrid-day {
+    background: white;
+    border: 1px solid black;
+    transition: background 0.2s ease-in-out;
+    padding: 5px; /* Fixes number cut-off issue */
+}
+
+/* ---- 🔴 Highlight Today’s Date ---- */
+.fc-day-today {
+    background: rgba(211, 47, 47, 0.1) !important;
+    border: 3px solid #d32f2f !important;
+    font-weight: bold;
+}
+
+/* ---- 📝 Event Styling ---- */
+.fc-daygrid-event {
+    background-color: #d32f2f !important;
+    color: white !important;
+    border-radius: 6px;
+    padding: 6px;
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.fc-daygrid-event:hover {
+    background-color: #b71c1c !important;
+    transform: translateY(-2px);
+}
+
+/* ---- 📅 Day Numbers (Fix Cut-off Issue) ---- */
+.fc-daygrid-day-number {
+    font-weight: bold;
+    color: black;
+    font-size: 1rem;
+    padding-right: 8px;
+    padding-left: 5px;
+    display: block; /* Ensures visibility */
+    text-align: right;
+}
+
+/* ---- 🎯 Scrollable Calendar ---- */
+.fc-view-harness {
+    overflow-y: auto; /* Enables vertical scrolling */
+    max-height: 500px; /* Adjust if needed */
+}
+
+/* ---- 🎨 Custom Scrollbar ---- */
+.fc-view-harness::-webkit-scrollbar {
+    width: 10px;
+}
+
+.fc-view-harness::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.fc-view-harness::-webkit-scrollbar-thumb {
+    background: #d32f2f;
+    border-radius: 10px;
+}
+
+.fc-view-harness::-webkit-scrollbar-thumb:hover {
+    background: #b71c1c;
+}
+
+/* ---- 📏 Ensuring Responsiveness ---- */
+@media (max-width: 768px) {
+    .calendar-container {
+        width: 100%;
+        padding: 10px;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    .fc-toolbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .fc .fc-button {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+}
