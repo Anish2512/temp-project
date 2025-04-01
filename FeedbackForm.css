@@ -1,0 +1,117 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Full Page Layout */
+html,
+body {
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+/* Neumorphic Feedback Container */
+.feedback-container {
+    width: 95%;
+    max-width: 900px;
+    /* Increased width */
+    margin-top: 100px;
+    padding: 50px;
+    background-color: #f4f4f4;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Title */
+.feedback-container h2 {
+    color: #c93333;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 5px #c9c9c9;
+}
+
+/* Labels */
+.feedback-container label {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Neumorphic Input Fields */
+.feedback-container input,
+.feedback-container select,
+.feedback-container textarea {
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background: #ffffff;
+    box-shadow: inset 5px 5px 10px #d1d1d1, inset -5px -5px 10px #ffffff;
+    color: #000;
+    outline: none;
+    transition: 0.3s;
+    margin-top: 5px;
+}
+
+/* Focus Effect */
+.feedback-container input:focus,
+.feedback-container select:focus,
+.feedback-container textarea:focus {
+    box-shadow: inset 3px 3px 6px #d1d1d1, inset -3px -3px 6px #ffffff;
+}
+
+/* Neumorphic Textarea */
+.feedback-container textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Neumorphic Button */
+.feedback-container button {
+    background: #ffffff;
+    color: #007bff;
+    font-size: 18px;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 6px 6px 12px #c9c9c9, -6px -6px 12px #ffffff;
+    margin-top: 15px;
+}
+
+/* Button Hover Effect */
+.feedback-container button:hover {
+    background: #007bff;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: inset 6px 6px 12px #0056b3, inset -6px -6px 12px #339cff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .feedback-container {
+        width: 95%;
+        padding: 35px;
+    }
+
+    .feedback-container button {
+        font-size: 16px;
+        padding: 12px 20px;
+    }
+}
