@@ -1,0 +1,40 @@
+{
+    "users": [
+      { "id": 1, "name": "Alice" },
+      { "id": 2, "name": "Bob" },
+      { "id": 3, "name": "Charlie" }
+    ],
+    "groups": [
+      {
+        "id": 101,
+        "name": "Tech Team",
+        "members": [1, 2, 3],
+        "messages": [
+          { "sender": "Alice", "text": "Hey team, any updates?", "timestamp": "2025-04-03T12:30:00Z" },
+          { "sender": "Bob", "text": "Working on the UI fixes!", "timestamp": "2025-04-03T12:32:00Z" },
+          { "sender": "Charlie", "text": "Testing the backend now.", "timestamp": "2025-04-03T12:34:00Z" }
+        ]
+      }
+    ],
+    "messages": [
+      {
+        "sender": "Alice",
+        "receiver": "Bob",
+        "text": "Hey Bob, how's it going?",
+        "timestamp": "2025-04-03T10:00:00Z"
+      },
+      {
+        "sender": "Bob",
+        "receiver": "Alice",
+        "text": "All good! Working on the project.",
+        "timestamp": "2025-04-03T10:05:00Z"
+      },
+      {
+        "sender": "Charlie",
+        "receiver": "Alice",
+        "text": "Hey Alice, did you check the report?",
+        "timestamp": "2025-04-03T11:00:00Z"
+      }
+    ]
+  }
+  
